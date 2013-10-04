@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e5efce814e06b36a516f1fec312a2524",
+    "hash": "8f3ce46a2ac1140a206741817b9ba03b",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -849,6 +849,48 @@
                 "password"
             ],
             "time": "2013-04-30 19:58:08"
+        },
+        {
+            "name": "jenssegers/model",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/Laravel-Model.git",
+                "reference": "d65fa1dae258aae9e9eb2b1b92889d1a6574d0ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/Laravel-Model/zipball/d65fa1dae258aae9e9eb2b1b92889d1a6574d0ce",
+                "reference": "d65fa1dae258aae9e9eb2b1b92889d1a6574d0ce",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jenssegers\\Model": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "email": "hello@jenssegers.be"
+                }
+            ],
+            "description": "An eloquent-like model, for Laravel 4 and other frameworks",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "time": "2013-08-16 08:36:42"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2095,7 +2137,8 @@
     "stability-flags": {
         "erusev/parsedown": 20,
         "guzzle/http": 20,
-        "juy/profiler": 20
+        "juy/profiler": 20,
+        "jenssegers/model": 20
     },
     "platform": [
 

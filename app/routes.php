@@ -13,5 +13,18 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	// Content blocks array
+	$blocks = Content::all();
+
+	// Get config
+	$config = FlatTurtle::get(Config::get('flatturtle.id'));
+
+	if (!$config) App::abort(500, 'Invalid FlatTurtle configuration');
+
+	// Carousel images
+	$images = Image::all();
+
+	// Render the template
+	return View::make(Config::get('flatturtle.template'), array('config' => $config, 'blocks' => $blocks, 'images' => $images));
+
 });
