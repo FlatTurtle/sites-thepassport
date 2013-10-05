@@ -6,7 +6,6 @@
     <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet">
 
     <style>
-
     .colorful, .btn-special {
         background-color: {{ $config->color }};
     }
@@ -15,16 +14,15 @@
         border-top: 5px solid {{ $config->color }};
     }
 
-    a, a:hover, .carousel-control:hover {
+    h1, a, a:hover, .carousel-control:hover {
         color: {{ $config->color }};
     }
-
     </style>
 </head>
 <body>
 
-    <div id="jumbo" class="carousel slide">
 
+    <section id="jumbo" class="carousel slide">
         <ol class="carousel-indicators">
         @foreach ($images as $i => $image)
             @if ($i == 0)
@@ -55,12 +53,29 @@
         <a class="right carousel-control" href="#jumbo" data-slide="next">
             <span class="icon-next"></span>
         </a>
-    </div>
+    </section>
+
+
+
+    <nav class="colorful">
+        <ul>
+        @foreach ($blocks as $block)
+            <li>
+                <a href="#{{ $block->id }}">{{ $block->title }}</a>
+            </li>
+        @endforeach
+            <li>
+                <a href="#newsletter">Newsletter</a>
+            </li>
+        </ul>
+    </nav>
+
+
 
     <section id="content">
     @foreach ($blocks as $block)
 
-    <div class="row">
+    <div class="block">
         <div id="{{ $block->id }}" class="container">
             {{ $block->html }}
         </div>
@@ -69,7 +84,9 @@
     @endforeach
     </section>
 
-    <section id="contact" class="row colorful">
+
+
+    <section id="newsletter" class="block colorful">
         <div class="container">
             <h1>Newsletter</h1>
 
@@ -88,9 +105,13 @@
         </div>
     </section>
 
+
+
     <section id="map">
-    <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ro/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q={{ $config->latitude }},{{ $config->longitude }}&amp;z={{ $config->zoom }}&amp;iwloc=A&amp;output=embed&amp;iwloc=nea"></iframe>
+        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ro/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q={{ $config->latitude }},{{ $config->longitude }}&amp;z={{ $config->zoom }}&amp;iwloc=A&amp;output=embed&amp;iwloc=nea"></iframe>
     </section>
+
+
 
     <script src="{{ URL::asset('javascript/jquery.js') }}"></script>
     <script src="{{ URL::asset('javascript/carousel.js') }}"></script>

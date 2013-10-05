@@ -43,4 +43,12 @@ class Content extends Model {
 		return $this->attributes['html'];
 	}
 
+	public function getTitleAttribute($value)
+	{
+		// Get first h1
+		preg_match('#<h1[^>]*>([^>]+)</h1>#', $this->html, $matches);
+
+		return strip_tags($matches[1]);
+	}
+
 }
