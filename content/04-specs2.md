@@ -1,8 +1,8 @@
-Specifications
-==============
-
 <div class="row">
 <div class="col-md-6">
+
+Specifications
+==============
 
 Nunc accumsan scelerisque pellentesque. Proin sed placerat turpis. Nam quis odio placerat risus molestie varius sit amet quis lorem. Morbi sed elit massa. Aliquam egestas elit quis ligula fringilla, ac placerat libero aliquam.
 

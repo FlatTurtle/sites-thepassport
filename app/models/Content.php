@@ -16,7 +16,7 @@ class Content extends Model {
 		foreach ($files as $file)
 		{
 			// Create block id based on file name
-			$id = basename($file, '.md');
+			$id = pathinfo($file, PATHINFO_FILENAME);
 			$id = preg_replace('#[0-9]+-#', '', $id);
 			$id = str_replace(' ', '-', $id);
 			$id = strtolower($id);
@@ -24,6 +24,7 @@ class Content extends Model {
 			// Create a new model
 			$model = new self;
 			$model->id = $id;
+			$model->type = pathinfo($file, PATHINFO_EXTENSION);
 			$model->raw = File::get($file);
 
 			$models[] = $model;
@@ -37,8 +38,16 @@ class Content extends Model {
 		// Check if parsed already
 		if ($value) return $value;
 
-		// Parse content to html
-		$this->attributes['html'] = Parsedown::instance()->parse($this->raw);
+		// Parse markdown
+		if ($this->type == 'md')
+		{
+			$this->attributes['html'] = Parsedown::instance()->parse($this->raw);
+		}
+		// Treat at HTML
+		else
+		{
+			$this->attributes['html'] = $this->raw;
+		}
 
 		return $this->attributes['html'];
 	}
@@ -48,7 +57,11 @@ class Content extends Model {
 		// Get first h1
 		preg_match('#<h1[^>]*>([^>]+)</h1>#', $this->html, $matches);
 
-		return strip_tags($matches[1]);
+		if (isset($matches[1]))
+		{
+			return strip_tags($matches[1]);
+		}
+
 	}
 
 }

@@ -60,9 +60,11 @@
     <nav class="colorful">
         <ul>
         @foreach ($blocks as $block)
+            @if ($block->title)
             <li>
                 <a href="#{{ $block->id }}">{{ $block->title }}</a>
             </li>
+            @endif
         @endforeach
             <li>
                 <a href="#newsletter">Newsletter</a>

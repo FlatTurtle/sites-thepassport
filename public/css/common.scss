@@ -118,10 +118,13 @@ nav {
 	padding-top: 40px;
 	padding-bottom: 40px;
 
+	h1:first-child, .row h1 {
+		margin-bottom: 30px;
+		margin-top: 0;
+	}
+
 	h1:first-child {
 		text-align: center;
-		margin-top: 0;
-		margin-bottom: 30px;
 	}
 
 	p, ul {
