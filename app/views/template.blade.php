@@ -2,20 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ $config->title }}</title>
+    <title>{{ $flatturtle->title }}</title>
     <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet">
 
     <style>
     .colorful, .btn-special {
-        background-color: {{ $config->color }};
+        background-color: {{ $flatturtle->color }};
     }
 
     #jumbo {
-        border-top: 5px solid {{ $config->color }};
+        border-top: 5px solid {{ $flatturtle->color }};
     }
 
     h1, a, a:hover, .carousel-control:hover {
-        color: {{ $config->color }};
+        color: {{ $flatturtle->color }};
     }
     </style>
 </head>
@@ -88,16 +88,17 @@
 
 
 
+    @if (Config::has('flatturtle.mailchimp'))
     <section id="newsletter" class="block colorful">
         <div class="container">
             <h1>Newsletter</h1>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris tellus, sollicitudin id libero vitae, pellentesque fringilla nisl.</p>
 
-            <form class="form-inline" role="form">
+            <form class="form-inline" method="POST" action="{{ Config::get('flatturtle.mailchimp') }}" role="form">
                 <div id="mailbox">
                     <div class="input-group">
-                        <input type="email" class="form-control">
+                        <input type="email" name="EMAIL" class="form-control">
                         <span class="input-group-addon">
                             <button type="submit" class="btn btn-special">Sign Up</button>
                         </span>
@@ -106,11 +107,14 @@
             </form>
         </div>
     </section>
+    @endif
 
 
 
     <section id="map">
-        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ro/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q={{ $config->latitude }},{{ $config->longitude }}&amp;z={{ $config->zoom }}&amp;iwloc=A&amp;output=embed&amp;iwloc=nea"></iframe>
+        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://maps.google.ro/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q={{ $flatturtle->latitude }},{{ $flatturtle->longitude }}&amp;z={{ $flatturtle->zoom }}&amp;iwloc=A&amp;output=embed&amp;iwloc=nea"
+        ></iframe>
     </section>
 
 

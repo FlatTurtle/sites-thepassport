@@ -8,4 +8,7 @@ return array(
 	// Template file
 	'template' => 'template',
 
+	// Mailchimp form action
+	'mailchimp' => '',
+
 );

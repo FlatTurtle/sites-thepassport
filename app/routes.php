@@ -16,15 +16,14 @@ Route::get('/', function()
 	// Content blocks array
 	$blocks = Content::all();
 
-	// Get config
-	$config = FlatTurtle::get(Config::get('flatturtle.id'));
-
-	if (!$config) App::abort(500, 'Invalid FlatTurtle configuration');
+	// Get FlatTurtle config
+	$flatturtle = FlatTurtle::get(Config::get('flatturtle.id'));
+	if (!$flatturtle) App::abort(500, 'Invalid FlatTurtle configuration');
 
 	// Carousel images
 	$images = Image::all();
 
 	// Render the template
-	return View::make(Config::get('flatturtle.template'), array('config' => $config, 'blocks' => $blocks, 'images' => $images));
+	return View::make(Config::get('flatturtle.template'), array('flatturtle' => $flatturtle, 'blocks' => $blocks, 'images' => $images));
 
 });
