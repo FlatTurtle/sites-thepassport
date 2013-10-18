@@ -28,6 +28,6 @@ Route::get('/', function()
 	$images = Image::all();
 
 	// Render the template
-	return View::make(Config::get('sitecore::template'), array('flatturtle' => $flatturtle, 'blocks' => $blocks, 'images' => $images));
+	return View::make(Config::get('sitecore::template', 'template'), array('flatturtle' => $flatturtle, 'blocks' => $blocks, 'images' => $images));
 
 });

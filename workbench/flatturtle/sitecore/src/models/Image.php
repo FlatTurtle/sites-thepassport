@@ -4,7 +4,7 @@ use Jenssegers\Model\Model;
 
 class Image extends Model {
 
-	protected static $folder = 'images/carousel';
+	protected static $folder = 'carousel';
 
 	public static function all()
 	{

@@ -9,6 +9,6 @@ return array(
 	'template' => 'sitecore::template',
 
 	// Mailchimp form action
-	'mailchimp' => '',
+	'mailchimp' => null,
 
 );

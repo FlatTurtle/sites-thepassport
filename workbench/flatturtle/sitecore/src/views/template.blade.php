@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ $flatturtle->title }}</title>
-    <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('packages/flatturtle/sitecore/css/common.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('favicon.ico') }}" rel="icon" type="image/x-icon">
 
     <style>
     .colorful, .btn-special {
@@ -88,7 +89,7 @@
 
 
 
-    @if (Config::has('sitecore::mailchimp'))
+    @if (Config::has('sitecore::mailchimp') && Config::get('sitecore::mailchimp'))
     <section id="newsletter" class="block colorful">
         <div class="container">
             <h1>Newsletter</h1>
@@ -119,8 +120,8 @@
 
 
 
-    <script src="{{ URL::asset('javascript/jquery.js') }}"></script>
-    <script src="{{ URL::asset('javascript/carousel.js') }}"></script>
+    <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/jquery.js') }}"></script>
+    <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/carousel.js') }}"></script>
 
 </body>
 </html>
