@@ -92,9 +92,9 @@
     @if (Config::get('sitecore::mailchimp'))
     <section id="newsletter" class="block colorful">
         <div class="container">
-            <h1>Newsletter</h1>
+            <h1>{{ Lang::get('sitecore::newsletter.title') }}</h1>
 
-            <p>Sign up below to receive your newsletter.</p>
+            <p>{{ Lang::get('sitecore::newsletter.text') }}</p>
 
             <form class="form-inline" method="POST" action="{{ Config::get('sitecore::mailchimp') }}" role="form">
                 <div id="mailbox">
