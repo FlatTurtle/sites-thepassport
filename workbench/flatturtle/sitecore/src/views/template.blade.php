@@ -89,12 +89,12 @@
 
 
 
-    @if (Config::has('sitecore::mailchimp') && Config::get('sitecore::mailchimp'))
+    @if (Config::get('sitecore::mailchimp'))
     <section id="newsletter" class="block colorful">
         <div class="container">
             <h1>Newsletter</h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris tellus, sollicitudin id libero vitae, pellentesque fringilla nisl.</p>
+            <p>Sign up below to receive your newsletter.</p>
 
             <form class="form-inline" method="POST" action="{{ Config::get('sitecore::mailchimp') }}" role="form">
                 <div id="mailbox">
@@ -122,6 +122,23 @@
 
     <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/jquery.js') }}"></script>
     <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/carousel.js') }}"></script>
+
+
+
+    @if (Config::get('sitecore::analytics'))
+    <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ Config::get("sitecore::analytics") }}']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    @endif
+
 
 </body>
 </html>

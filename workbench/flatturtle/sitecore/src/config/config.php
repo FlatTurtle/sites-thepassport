@@ -11,4 +11,7 @@ return array(
 	// Mailchimp form action
 	'mailchimp' => null,
 
+	// Google Analytics code
+	'analytics' => null,
+
 );
