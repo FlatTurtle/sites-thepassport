@@ -1,4 +1,5 @@
-<?php
+<?php namespace Flatturtle\Sitecore\Models;
+
 use Jenssegers\Model\Model;
 
 class Content extends Model {
@@ -8,7 +9,7 @@ class Content extends Model {
 	public static function all()
 	{
 		// Get content files
-		$files = File::files(base_path() . '/' . self::$folder);
+		$files =\File::files(base_path() . '/' . self::$folder);
 
 		$models = array();
 
@@ -25,7 +26,7 @@ class Content extends Model {
 			$model = new self;
 			$model->id = $id;
 			$model->type = pathinfo($file, PATHINFO_EXTENSION);
-			$model->raw = File::get($file);
+			$model->raw = \File::get($file);
 
 			$models[] = $model;
 		}
@@ -41,7 +42,7 @@ class Content extends Model {
 		// Parse markdown
 		if ($this->type == 'md')
 		{
-			$this->attributes['html'] = Parsedown::instance()->parse($this->raw);
+			$this->attributes['html'] = \Parsedown::instance()->parse($this->raw);
 		}
 		// Treat at HTML
 		else

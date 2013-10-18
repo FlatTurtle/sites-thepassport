@@ -88,14 +88,14 @@
 
 
 
-    @if (Config::has('flatturtle.mailchimp'))
+    @if (Config::has('sitecore::mailchimp'))
     <section id="newsletter" class="block colorful">
         <div class="container">
             <h1>Newsletter</h1>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris tellus, sollicitudin id libero vitae, pellentesque fringilla nisl.</p>
 
-            <form class="form-inline" method="POST" action="{{ Config::get('flatturtle.mailchimp') }}" role="form">
+            <form class="form-inline" method="POST" action="{{ Config::get('sitecore::mailchimp') }}" role="form">
                 <div id="mailbox">
                     <div class="input-group">
                         <input type="email" name="EMAIL" class="form-control">

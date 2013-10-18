@@ -3,10 +3,10 @@
 return array(
 
 	// FlatTurtle id
-	'id' => '',
+	'id' => 'iminds-zuiderpoort',
 
 	// Template file
-	'template' => 'template',
+	'template' => 'sitecore::template',
 
 	// Mailchimp form action
 	'mailchimp' => '',

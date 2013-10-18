@@ -1,10 +1,10 @@
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-8">
 
 ![macbook](http://i.zdnet.com/blogs/macbook-pro-retina-display-ogrady.jpg)
 
 </div>
-<div class="col-md-6">
+<div class="col-md-4">
 
 Specifications
 ==============

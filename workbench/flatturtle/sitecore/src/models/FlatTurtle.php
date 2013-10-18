@@ -1,4 +1,5 @@
-<?php
+<?php namespace Flatturtle\Sitecore\Models;
+
 use Jenssegers\Model\Model;
 use Guzzle\Http\Client;
 

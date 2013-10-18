@@ -1,4 +1,5 @@
-<?php
+<?php namespace Flatturtle\Sitecore\Models;
+
 use Jenssegers\Model\Model;
 
 class Image extends Model {
@@ -8,7 +9,7 @@ class Image extends Model {
 	public static function all()
 	{
 		// Get content files
-		$files = File::files(public_path() . '/' . self::$folder);
+		$files = \File::files(public_path() . '/' . self::$folder);
 
 		// Loop all files
 		foreach ($files as &$file)
