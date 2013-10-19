@@ -44,11 +44,14 @@ class FlatTurtle extends Model {
 
 	public function getZoomAttribute()
 	{
-		foreach ($this->turtles as $turtle)
+		if ($this->turtles)
 		{
-			if ($turtle->type == 'map' && isset($turtle->options->zoom))
+			foreach ($this->turtles as $turtle)
 			{
-				return $turtle->options->zoom + 2;
+				if ($turtle->type == 'map' && isset($turtle->options->zoom))
+				{
+					return $turtle->options->zoom + 2;
+				}
 			}
 		}
 
