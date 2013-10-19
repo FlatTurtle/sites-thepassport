@@ -59,11 +59,12 @@ return array(
 	| url. You can check the available icons at:
 	| 	http://fortawesome.github.io/Font-Awesome/icons/#brand
 	|
+	| Example:
+	|	'facebook' => 'https://www.facebook.com/pages/FlatTurtle/451854318217554'
+	|
 	*/
 
 	'social' => array(
-
-		'facebook' => 'test',
 
 	)
 
