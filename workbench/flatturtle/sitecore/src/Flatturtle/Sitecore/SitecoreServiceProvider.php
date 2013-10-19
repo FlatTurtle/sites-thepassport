@@ -1,7 +1,6 @@
 <?php namespace Flatturtle\Sitecore;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\Artisan;
 use Flatturtle\Sitecore\Commands\InstallCommand;
 use Flatturtle\Sitecore\Commands\UpdateCommand;
 
