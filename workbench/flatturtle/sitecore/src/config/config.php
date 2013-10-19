@@ -63,6 +63,8 @@ return array(
 
 	'social' => array(
 
+		'facebook' => 'test',
+
 	)
 
 );

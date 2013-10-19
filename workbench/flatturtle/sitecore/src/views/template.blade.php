@@ -120,7 +120,6 @@
 
 
 
-    @if (Config::get("sitecore::social") && count(Config::get("sitecore::social")))
     <section id="social" class="block colorful">
         <div class="container">
             @foreach (Config::get("sitecore::social") as $service => $url)
@@ -130,9 +129,12 @@
                 </a>
 
             @endforeach
+
+            <div id="copyright">
+                &copy; {{ date('Y') }} <a href="http://flatturtle.com" target="_blank">FlatTurtle</a>
+            </div>
         </div>
     </section>
-    @endif
 
 
 
