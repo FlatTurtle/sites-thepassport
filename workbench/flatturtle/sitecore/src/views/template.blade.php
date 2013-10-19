@@ -120,6 +120,22 @@
 
 
 
+    @if (Config::get("sitecore::social") && count(Config::get("sitecore::social")))
+    <section id="social" class="block colorful">
+        <div class="container">
+            @foreach (Config::get("sitecore::social") as $service => $url)
+
+                <a href="{{ $url }}" target="_blank">
+                    <i class="icon-{{ $service }}"></i>
+                </a>
+
+            @endforeach
+        </div>
+    </section>
+    @endif
+
+
+
     <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/jquery.js') }}"></script>
     <script src="{{ URL::asset('packages/flatturtle/sitecore/javascript/carousel.js') }}"></script>
 
