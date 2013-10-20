@@ -14,9 +14,7 @@ Clone this repository and install the Laravel framework and other dependencies:
 
 Make sure the folders in `app/storage` are writable.
 
-Next, publish the **SiteCore** configuration files and assets using the following artisan command:
-
-	php artisan flatturtle:install
+The `composer install` command will automatically trigger the `php artisan flatturtle:install`. This command publishes the **SiteCore** configuration files and assets to your local installation.
 
 Updating
 --------
@@ -25,11 +23,9 @@ To update the **SiteCore** to the latest version run:
 
 	composer update flatturtle/sitecore
 
-This will pull the latest changes from the git repository. When assets are modified, you will need to run the following artisan command to publish those changes:
+This will pull the latest changes from the git repository. It will automatically trigger the `php artisan flatturtle:update` command that publishes assets to your local installation.
 
-	php artisan flatturtle:update
-
-Also, double check if the configuration file was modified and change your local version accordingly. You can also overwrite your local configuration file with the latest version with the `php artisan flatturtle:install` command.
+Also, double check if the configuration file was modified and change your local version accordingly. You can overwrite your local configuration file with the latest version by using the `php artisan flatturtle:install` command.
 
 Configuration
 -------------
@@ -46,3 +42,18 @@ The **SiteCore** contains a default template file. If you wish to modify this te
 This will copy the template file to `app/views/flatturtle/sitecore` so that you can modify it. Then change your configuration file to use that template file instead of the included one:
 
 	'template' => 'flatturtle.sitecore.template',
+
+Carousel
+--------
+
+All images placed in the `public/carousel` folder will automatically be used for the carousel.
+
+Content
+-------
+
+The `content` folder contains the site's content. You can include markdown (.md) and HTML (.html) files. Markdown files will be parsed using parsedown.org.
+
+You can order your site's content by adding numbers in front of the file name:
+
+	01-first_block.md
+	02-second_block.html
