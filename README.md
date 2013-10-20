@@ -39,9 +39,7 @@ The **SiteCore** contains a default template file. If you wish to modify this te
 
 	php artisan view:publish flatturtle/sitecore
 
-This will copy the template file to `app/views/flatturtle/sitecore` so that you can modify it. Then change your configuration file to use that template file instead of the included one:
-
-	'template' => 'flatturtle.sitecore.template',
+This will copy the template file to `app/views/flatturtle/sitecore` so that you can modify it.
 
 Carousel
 --------
