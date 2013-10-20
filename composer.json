@@ -4,8 +4,15 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "4.0.*",
+		"flatturtle/sitecore": "dev-master"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/FlatTurtle/SitesCore.git"
+		}
+	],
 	"autoload": {
 		"classmap": [
 			"app/models"
