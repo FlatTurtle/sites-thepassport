@@ -69,6 +69,7 @@ Used when installing the **SiteCore** for the first time. This will:
  - Publish assets to `public/packages/flatturtle/sitecore`
  - Generate a Laravel application key
  - Clear application cache
+ - Create the content directory if it does not exists
 
 ### flatturtle:update
 
