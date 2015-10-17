@@ -23,7 +23,7 @@
                 </li>
             @endif
                 <li>
-                    <a href="http://google.be" class="btn colorful">Reserve</a>
+                    <a href="#reserve" class="btn colorful">Reserve</a>
                 </li>
             </ul>
         </div>
